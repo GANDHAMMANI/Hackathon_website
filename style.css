@@ -1,0 +1,322 @@
+
+<style>
+:root {
+    --primary: #ff007f;
+    --secondary: #9e2db2;
+    --dark: #1a1a1a;
+    --light: #ffffff;
+    --gradient: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #f6f6f6 0%, #ffffff 100%);
+}
+
+.header-container {
+    background: var(--gradient);
+    padding: 1.5rem;
+    border-radius: 0 0 3rem 3rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.carousel-inner {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 500px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.register-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: var(--gradient);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+/* Countdown Styles */
+.countdown-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.countdown-item {
+    background: var(--gradient);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Department Section Styles */
+.department-section {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+.hod-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hod-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 4rem 0;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+}
+
+.glow-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(255, 0, 127, 0.2), 
+        rgba(158, 45, 178, 0.2), 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-card:hover .glow-effect {
+    opacity: 1;
+    animation: glow 2s infinite;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.icon-circle i {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Location Section Styles */
+.location-section {
+    padding: 4rem 0;
+}
+
+.map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.modern-footer {
+    background: var(--gradient);
+    color: white;
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.social-icons {
+    margin: 2rem 0;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes glow {
+    0% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .header-container h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-item {
+        height: 300px;
+    }
+
+    .register-button {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+}
+</style>
+<style>
+   
+
+
+    .countdown-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 1rem;
+    }
+
+    .countdown div {
+      background: var(--gradient);
+      padding: 1rem;
+      border-radius: 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .countdown span {
+      font-size: 3rem;
+      font-weight: bold;
+      display: block;
+    }
+
+    .countdown div:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  </style>
